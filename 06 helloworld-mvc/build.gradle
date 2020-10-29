@@ -1,0 +1,24 @@
+plugins {
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.8'
+}
+
+javafx {
+    version = "11.0.2"
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+
+group 'de.kneitzel'
+version '1.0-SNAPSHOT'
+
+mainClassName = 'helloworld.HelloWorld'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.openjfx', name: 'javafx-controls', version: '11.0.2'
+    compile group: 'org.openjfx', name: 'javafx-fxml', version: '11.0.2'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
