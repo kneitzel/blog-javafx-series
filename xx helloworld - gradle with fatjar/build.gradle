@@ -1,0 +1,59 @@
+plugins {
+    id 'java'
+}
+
+group 'de.kneitzel'
+version '1.0-SNAPSHOT'
+ext.moduleName = 'HelloWorld.main'
+sourceCompatibility = 1.11
+
+repositories {
+    mavenCentral()
+}
+
+def currentOS = org.gradle.internal.os.OperatingSystem.current()
+def platform
+if (currentOS.isWindows()) {
+    platform = 'win'
+} else if (currentOS.isLinux()) {
+    platform = 'linux'
+} else if (currentOS.isMacOsX()) {
+    platform = 'mac'
+}
+
+dependencies {
+    compile "org.openjfx:javafx-base:11:${platform}"
+    compile "org.openjfx:javafx-graphics:11:${platform}"
+    compile "org.openjfx:javafx-controls:11:${platform}"
+	compile "org.openjfx:javafx-fxml:11:${platform}"
+}
+
+task run(type: JavaExec) {
+    classpath sourceSets.main.runtimeClasspath
+    main = "helloworld.HelloWorld"
+}
+
+jar {
+    inputs.property("moduleName", moduleName)
+    manifest {
+        attributes('Automatic-Module-Name': moduleName)
+    }
+}
+
+compileJava {
+    inputs.property("moduleName", moduleName)
+    doFirst {
+        options.compilerArgs = [
+                '--module-path', classpath.asPath,
+                '--add-modules', 'javafx.controls,javafx.fxml'
+        ]
+        classpath = files()
+    }
+}
+
+task createJar(type: Copy) {
+    dependsOn 'jar'
+    into "$buildDir/libs"
+    from configurations.runtime
+}
+
