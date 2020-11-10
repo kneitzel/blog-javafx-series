@@ -18,19 +18,6 @@ repositories {
 }
 
 dependencies {
-//    Nur die eigene Plattform:
-//    compile group: 'org.openjfx', name: 'javafx-controls', version: '11.0.2'
-//    compile group: 'org.openjfx', name: 'javafx-fxml', version: '11.0.2'
-
-//  JavaFX Plattform: Windows
-    compile group: 'org.openjfx', name: 'javafx-controls', version: '11.0.2', classifier: 'win'
-    compile group: 'org.openjfx', name: 'javafx-fxml', version: '11.0.2', classifier: 'win'
-
-//  JavaFX Plattform: Mac
-    compile group: 'org.openjfx', name: 'javafx-controls', version: '11.0.2', classifier: 'mac'
-    compile group: 'org.openjfx', name: 'javafx-fxml', version: '11.0.2', classifier: 'mac'
-
-//  JavaFX Plattform: Linux
-    compile group: 'org.openjfx', name: 'javafx-controls', version: '11.0.2', classifier: 'linux'
-    compile group: 'org.openjfx', name: 'javafx-fxml', version: '11.0.2', classifier: 'linux'
+    compile group: 'org.openjfx', name: 'javafx-controls', version: '11.0.2'
+    compile group: 'org.openjfx', name: 'javafx-fxml', version: '11.0.2'
 }
