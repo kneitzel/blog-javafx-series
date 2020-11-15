@@ -14,6 +14,11 @@
     <maven.compiler.target>11</maven.compiler.target>
   </properties>
 
+    <organization>
+        <!-- Used as the 'Vendor' for JNLP generation -->
+        <name>K. Neitzel Blog</name>
+    </organization>
+
   <dependencies>
     <dependency>
       <groupId>org.openjfx</groupId>
@@ -29,11 +34,22 @@
   <build>
     <plugins>
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <release>11</release>
+        </configuration>
+      </plugin>
+      <plugin>
         <groupId>org.openjfx</groupId>
         <artifactId>javafx-maven-plugin</artifactId>
         <version>0.0.3</version>
         <configuration>
-          <mainClass>helloworld.HelloWorld</mainClass>
+          <release>11</release>
+          <jlinkImageName>hellofx</jlinkImageName>
+          <launcher>hellofx</launcher>
+          <mainClass>HelloWorld.main/helloworld.HelloWorld</mainClass>
         </configuration>
       </plugin>
     </plugins>
