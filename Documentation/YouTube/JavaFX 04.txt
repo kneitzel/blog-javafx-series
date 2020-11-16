@@ -1,0 +1,30 @@
+JavaFX Blog Serie - 04 IntelliJ
+
+Herzlich willkommen in meinem neuen Kanal, in dem ich in erster Linie Themen rund um die Software Entwicklung (Java) behandeln werde.
+Unter anderem werde ich hier diverse Blog Beiträge mehr im Detail erläutern.
+
+Dieses Video dient mit zur Erläuterung des Blog Beitrages unter https://blog.kneitzel.de/2020/11/02/javafx-intellij/
+
+Links
+- Mein Blog findet sich unter https://blog.kneitzel.de.
+- Sourcen zu meiner JavaFX Serie: https://github.com/kneitzel/blog-javafx-series
+- Java Forum für Fragen rund um Java: https://www.java-forum.org/
+- IntelliJ IDEA: https://www.jetbrains.com/idea/
+- Toolbox App: https://www.jetbrains.com/toolbox-app/
+
+Informationen zu mir (Autor) und meinem Kanal
+Die Software Entwicklung ist mein großes Hobby, welches ich auch zu meinem Beruf machen konnte. So Arbeite ich als Senior Software Engineer bei einem großen, internationalen IT Konzern und habe nebenher noch ein kleines Gewerbe um kleine Firmen zu beraten und für diese Software zu entwickeln / zu warten.
+Ich habe vereinzelt Blog Artikel geschrieben aber war mit dem Format nie zufrieden, daher dieser Versuch, Themen auf zwei Ebenen zu vermitteln:
+a) Blog Eintrag – Es wird weiterhin kurze Blog Einträge geben, in denen ich ein Thema kurz vorstelle.
+b) YouTube Videos – Ich hoffe, in diesen das Thema besser präsentieren und erläutern zu können.
+
+Verwendete Software:
+- System: Linux Mint
+- Aufnahme: OBS Studio https://obsproject.com/de
+- Ton Bearbeitung: Audacity Portable
+- Video Schnitt: kdenlive
+
+Fragen / Anregungen
+Fragen und Anregungen könnt ihr natürlich in den Kommentaren platzieren. Ihr könnt mir aber auch gerne eine Email schreiben: konrad@kneitzel.de. Fragen rund um Java sind aber auch jederzeit im Java Forum auf https://www.java-forum.org gut aufgehoben – dort findet sich eine nette Community, die gerne auf eure Fragen eingehen wird.
+
+Ich freue mich über Rückmeldungen. Gerne in Form von Kommentaren unter diesem Video oder per Email an konrad@kneitzel.de.
