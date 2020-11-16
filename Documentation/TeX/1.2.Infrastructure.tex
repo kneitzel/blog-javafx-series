@@ -1,0 +1,62 @@
+\section{Notwendige Infrastruktur}
+In diesem Kapitel wird die notwendige Infrastruktur zur Entwicklung mit JavaFX erläutert.
+\subsection{Java Installation}
+Um mit JavaFX Software entwickeln zu können, muss eine Java Installation vorliegen. Diese Notwendigkeit hört sich trivial an, aber in der Praxis gibt es hier leider ein paar Stolpersteine, die einem das Leben unnötig schwer machen k"onnen.
+
+\subsubsection{JRE vs. JDK}
+Die erste wichtige Unterscheidung ist die zwischen JRE (Java Runtime Environment) und dem JDK (Java Development Kit). Das JRE enthält nur die Komponenten, die zum Ausf"uhren von Java Applikationen notwendig sind. Compiler und ähnliche Tools sind nicht mit dabei.
+
+Dem gegenüber steht das JDK, welches neben dem JRE noch sämtliche Entwicklertools beinhaltet wie z.B. den Java Compiler.
+
+\begin{tabular}[h]{|p{2cm}|p{9cm}|}
+\hline
+\textbf{Vorsicht!} & Wenn man Java herunter laden möchte, dann stolpern viele Nutzer über die Webseite java.com. Dort bietet Oracle aber leider nur das JRE an und dies in einer recht alten Version 8! \\
+\hline
+\end{tabular}
+
+\subsubsection{Java vs. OpenJDK}
+Java bezeichnet nicht nur die Programmiersprache Java sondern ist auch ein Produkt von Oracle. Oracle bietet Java Downloads an, so z.B. auch Java Development Kits. Diese stehen aber unter einer proprietären Lizenz, es ist daher notwendig, die Lizenz genau zu lesen und aufzupassen, das die eigenen Tätigkeiten durch die Lizenz abgedeckt sind.
+
+OpenJDK ist eine Open Source Variante vom Java Development Kit. Oracle hat hier eine Referenzimplementation freigegeben und viele Entwickler haben darauf basierend eigene OpenJDKs heraus gebracht. Darunter sind auch große Firmen wie z.B. IBM. Diese OpenJDKs stehen unter der GPL v2, der GNU Public License in Version 2 von 1991, die dem Anwender jegliche Benutzung und Weitergabe explizit erlauben. Die Einschränbkung ist lediglich, dass man bei Änderungen am Source Code beim Weitergeben auch immer mit geben muss. Diese Einschränkung ist aber irrelevant, denn wir planen eigene Java Software zu schreiben und wollen nicht das OpenJDK selbst ändern.
+
+Anbieter von OpenJDKs gibt es viele. Die wichtigsten sind:
+\begin{itemize}
+\item AdoptOpenJDK - Unter https://adoptopenjdk.net/ finden sich die Downloads für die üblichen Betriebssysteme (Windows, Mac, Linux) in allen wichtigen Versionen-
+\item Das Bellsoft Liberica JDK findet sich unter https://bell-sw.com/. Die Besonderheit hier ist, dass es als Option ein full JDK gibt, welches auch ein JavaFX mit beinhaltet.
+\end{itemize}
+Diese Auflistung ist natürlich alles andere als komplett und beschränkt sich auf eine sinnvolle, kleine Auswahl.
+
+\begin{tabular}[h]{|p{2cm}|p{9cm}|}
+\hline
+\textbf{Empfehlung} & Das AdoptOpenJDK ist eine gute Wahl und hat sich in der Praxis gut bewährt und ist neuerdings auch Part von der Eclipse Foundation! \\
+\hline
+\end{tabular}
+
+\subsubsection{Die richtige Version}
+Die nächste wichtige Frage ist: Welche Version soll man nehmen? Die aktuelle Version derzeit ist das OpenJDK 15. Bei der jeweils letzten Version gibt es die Problematik, dass diese regelmäßig durch neue Versionen abgelöst werden und dann keine Security Patche mehr bekommen (so notwendig). Dies kann problematisch sein, denn bei einem Wechsel der Java Version kann es auf Grund von Inkompatibilitäten zu Problemen kommen. So gab es z.B. bei Erscheinen von Java 15 Probleme mit manchen Gradle Versionen.
+
+Daher ist die Empfehlung, zu einer LTS Version, einer Version mit Long Time Support, zu greifen. Diese LTF Versionen bekommen auch lange nach erscheinen von neuen Versionen weiter Updates. Somit kann auf Sicherheitslücken reagiert werden ohne ggf. Probleme durch Inkompatibilitäten zu bekommen.
+
+\begin{tabular}[h]{|p{2cm}|p{9cm}|}
+\hline
+\textbf{Empfehlung} & Die letzte LTS Version ist derzeit OpenJDK 11. Dies wäre ein guter Start für jeden Anfänger. \\
+\hline
+\end{tabular}
+
+\subsubsection{Weitere Optionen}
+Es gibt teilweise noch weitere Optionen. So kann bei AdoptOpenJDK noch zwischen zwei JVM (Java Virtual Machines - die virtuelle Umgebung für Java Programme) gewählt werden.
+
+\begin{itemize}
+\item HotSpot - Die Referenz Implementation von Oracle ist bekannt unter dem Namen HotSpot. Dies ist eine universelle JVM, die für alle Anwendungsfälle geeignet ist.
+\item OpenJ9 - Die Eclipse Foundation hat eine eigene JVM entwickelt, welche speziell auf Startgeschwindigkeit und geringem Speicherverbrauch optimiert wurde. Dabei handelt es sich aber weiterhin um eine universelle JVM, die für alle Anwendungsfälle genutzt werden kann.
+\end{itemize}
+
+Somit kann hier frei gewählt werden - bei der Wahl zwsichen den beiden JVMs bei AdoptOpenJDK kann somit nichts falsch gemacht werden.
+
+\subsection{JavaFX}
+JavaFX kann auf der Seite https://openjfx.io herunter geladen und installiert werden. Dies ist aber ein Vorgehen, von dem ich explizit abrate. Das JavaFX ist dann manuell einzubinden, d.h. beim Compilieren und auch beim Ausführen muss der sogenannte Modul-Pfad richtig gesetzt sein. Bei Entwicklungsumgebungen muss diese korrekt konfiguriert werden. Und Updates werden unnötig kompliziert.
+
+Daher sollte auf diesen Weg verzichtet werden. Statt dessen sollte JavaFX wie jede andere Abhängigkeit behandelt werden und durch ein Build-Tool wie Maven\footnote{Apache Maven: https://maven.apache.org} oder Gradle\footnote{Gradle: https://gradle.org} automatisch eingebunden werden.
+
+Dieses Vorgehen wird im weiteren Verlauf des Buches erläutert.
+

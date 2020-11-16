@@ -1,0 +1,60 @@
+\section{Über dieses Buch}
+
+\subsection{Schreibweisen}
+\subsubsection{Hinweise und Empfehlungen}
+Besondere Hinweise, Warnungen oder Empfehlungen finden sich wie folgt in diesem Buch:
+
+\begin{tabular}[h]{|p{2cm}|p{9cm}|}
+\hline
+\textbf{Empfehlung} & Dies ist eine Empfehlung des Autors, die beachtet werden sollte! \\
+\hline
+\end{tabular}
+
+\subsection{Code-Beispiele}
+Code wird im Buch immer wie folgt dargestellt:
+
+\textbf{javafx-buch/kapitel/some/path/HelloWorld.java}
+\begin{lstlisting}
+package helloworld;
+
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+
+public class HelloWorld extends Application {
+
+    public static void main(final String[] args) {
+        launch(args);
+    }
+
+    @Override
+    public void start(final Stage primaryStage) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("HelloWorld.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+}
+\end{lstlisting}
+
+\subsection{Autor}
+Paar Informationen über mich ... Muss ich mir noch überlegen ...
+
+\subsection{Danksagung}
+Ich danke allen, die mir bei diesem Werk geholfen haben ...
+
+\subsection{Weitere Ressourcen}
+
+\subsubsection{Ressourcen des Buches}
+Die Ressourcen des Buches finden sich auf Github unter https://github.com/kneitzel/javafx-book.
+
+\subsubsection{Blog}
+Auf https://blog.kneitzel.de/ findet sich der Blog von mir. Dort finden sich einige Artikel rund um die Software Entwicklung.
+
+\subsection{YouTube}
+Auf YouTube finden sich von mir diverse Videos, in denen ich über Software Entwicklungsthemen rede.
+
