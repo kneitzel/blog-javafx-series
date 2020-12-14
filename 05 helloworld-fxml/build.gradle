@@ -14,7 +14,7 @@ version '1.0-SNAPSHOT'
 tasks.withType(JavaCompile) { options.encoding = 'UTF-8' }
 sourceCompatibility = 1.11
 
-mainClassName = 'helloworld.HelloWorld'
+mainClassName = 'HelloWorld.main/helloworld.HelloWorld'
 
 repositories {
     mavenCentral()
