@@ -1,5 +1,6 @@
 package helloworld;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 
 public class HelloWorldController {
@@ -20,7 +21,7 @@ public class HelloWorldController {
      * @param e ActionEvent (unused).
      */
     public void closeApplicationAction(final ActionEvent e) {
-        System.exit(0);
+        Platform.exit();
     }
 
     /**
